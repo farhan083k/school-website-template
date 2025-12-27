@@ -96,6 +96,11 @@ const Enrollment = () => {
   const { toast } = useToast();
   const { settings } = useSchoolSettings();
 
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Fetch programs from database
   useEffect(() => {
     const fetchPrograms = async () => {

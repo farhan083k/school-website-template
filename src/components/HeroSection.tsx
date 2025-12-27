@@ -2,9 +2,11 @@ import { ChevronRight, Play, Users, Award, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useSchoolSettings } from '@/hooks/useSchoolSettings';
 import heroImage from '@/assets/hero-school.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
   const { settings } = useSchoolSettings();
+  const navigate = useNavigate();
 
   const stats = [
     { icon: Users, value: settings.stat_students, label: settings.stat_students_label },
@@ -55,7 +57,7 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 mb-12 animate-slide-up" style={{ animationDelay: '0.3s' }}>
             <Button
-              onClick={() => scrollToSection('#contact')}
+              onClick={() => navigate('/enrollment')}
               size="lg"
               className="bg-accent text-accent-foreground font-semibold hover:bg-accent/90 gap-2 h-14 px-8"
             >
